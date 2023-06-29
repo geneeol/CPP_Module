@@ -18,6 +18,7 @@ void PhoneBook::addContact(void)
     std::string nickname;
     std::string phoneNumber;
     std::string darkSecret;
+    std::string junk;
 
     std::cout << "Enter a first name: ";
     std::cin >> firstName;
@@ -27,8 +28,8 @@ void PhoneBook::addContact(void)
     std::cin >> nickname;
     std::cout << "Enter a phone number: ";
     std::cin >> phoneNumber;
-    std::cout << "Enter the darkest secret";
-    std::cin.ignore();
+    std::cout << "Enter the darkest secret: ";
+    getline(std::cin, junk);
     getline(std::cin, darkSecret);
     contacts[nextIndex++].setInfo(firstName, lastName, nickname, phoneNumber,
                                   darkSecret);
@@ -65,16 +66,16 @@ void PhoneBook::searchContact(void)
     const size_t maxSize = std::numeric_limits<std::streamsize>::max();
     int idx;
 
-    std::cout << "debug: " << maxSize << std::endl;
     printAllContact();
     std::cout << "Enter an index: ";
     std::cin >> idx;
-    if (std::cin.fail())
+    while (std::cin.fail() && std::cin.eof() == false)
     {
-        std::cout << "Invalid type: index must be an integer" << std::endl;
+        std::cout << "Invalid type: index must be an integer\n"
+                  << "Try again" << std::endl;
         std::cin.clear();
         std::cin.ignore(maxSize, '\n');
-        return;
+        std::cin >> idx;
     }
     if (idx < 0 || idx >= nContacts)
     {

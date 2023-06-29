@@ -7,7 +7,6 @@ int main(void)
     PhoneBook phoneBook;
     std::string command;
 
-    // TODO: eof 처리
     while (true)
     {
         std::cout << "Enter a command: ";
