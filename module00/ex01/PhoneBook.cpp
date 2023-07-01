@@ -1,6 +1,7 @@
 #include "PhoneBook.hpp"
 #include <iomanip>
 #include <iostream>
+#include <limits>
 
 #define SEP "|"
 #define COL_WIDTH 10
