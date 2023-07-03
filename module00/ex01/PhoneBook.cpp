@@ -42,7 +42,6 @@ void PhoneBook::addContact(void)
 
 std::string PhoneBook::formatter(const std::string &str)
 {
-    // TODO: COL_WIDTH 출력 형식 고려할 것
     if (str.length() >= COL_WIDTH)
         return (str.substr(0, COL_WIDTH - 1) + ".");
     return (str);
@@ -67,6 +66,7 @@ void PhoneBook::searchContact(void)
     const size_t maxSize = std::numeric_limits<std::streamsize>::max();
     int idx;
 
+    // 입력 1a, 7 a 등 처리하려면 getline으로 읽고 stoi구현하는 것이 바람직
     printAllContact();
     std::cout << "Enter an index: ";
     std::cin >> idx;
