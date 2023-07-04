@@ -17,10 +17,9 @@ Fixed::Fixed()
 Fixed::Fixed(const Fixed &fixed)
 {
     std::cout << "Copy constructor called" << std::endl;
-    val = fixed.getRawBits();
+    *this = fixed;
 }
 
-// TODO: 출력문 과제와 다른 점 찾기
 Fixed &Fixed::operator=(const Fixed &fixed)
 {
     std::cout << "Copy assignment operator called" << std::endl;
