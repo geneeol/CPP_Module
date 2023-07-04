@@ -23,8 +23,12 @@ int main(void)
 
     Fixed e(299.123456789f);
     Fixed f(-10.5f);
+    Fixed g(-100.0f);
+    Fixed h(-100);
 
     std::cout << "e is " << e << std::endl;
     std::cout << "f is " << f << std::endl;
+    std::cout << "g is " << g << std::endl;
+    std::cout << "h is " << h << std::endl;
     return 0;
 }
