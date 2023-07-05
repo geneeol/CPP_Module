@@ -38,11 +38,6 @@ Fixed::Fixed(const float val)
     this->val = roundf(val * (1 << fracBits));
 }
 
-// Fixed::Fixed(const long long val)
-// {
-//     this->val = val fracBits;
-// }
-
 int Fixed::getRawBits(void) const
 {
     return (val);
@@ -99,12 +94,18 @@ bool Fixed::operator!=(const Fixed &fixed) const
 
 Fixed Fixed::operator+(const Fixed &fixed) const
 {
-    return (Fixed(val + fixed.val));
+    Fixed tmp;
+
+    tmp.setRawBits(val + fixed.val);
+    return (tmp);
 }
 
 Fixed Fixed::operator-(const Fixed &fixed) const
 {
-    return (Fixed(val - fixed.val));
+    Fixed tmp;
+
+    tmp.setRawBits(val - fixed.val);
+    return (tmp);
 }
 
 // long long으로 형변환 해야 오버플로우로 인한 precision loss를 방지할 수 있다.

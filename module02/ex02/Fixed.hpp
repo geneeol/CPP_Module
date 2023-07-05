@@ -15,7 +15,6 @@ class Fixed
     ~Fixed();
     Fixed(const int val);
     Fixed(const float val);
-    Fixed(const long long val);
 
     int getRawBits(void) const;
     void setRawBits(int const raw);
