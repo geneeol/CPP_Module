@@ -121,6 +121,9 @@ int Fixed::fixedDiv(long long a, long long b)
 // https://spin.atomicobject.com/2012/03/15/simple-fixed-point-math/
 // https://stackoverflow.com/questions/14008330/how-do-you-multiply-two-fixed-point-numbers
 // https://en.wikipedia.org/wiki/Fixed-point_arithmetic#Multiplication
+
+// https://www.allaboutcircuits.com/technical-articles/multiplication-examples-using-the-fixed-point-representation/
+// 위 링크는 fixed point의 곱셈을 비트 단위 관점에서 자세히 설명함 (음수도 다룸)
 Fixed Fixed::operator*(const Fixed &fixed) const
 {
     Fixed tmp;
