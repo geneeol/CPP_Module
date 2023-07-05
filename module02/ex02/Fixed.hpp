@@ -35,6 +35,9 @@ class Fixed
     Fixed operator*(const Fixed &fixed) const;
     Fixed operator/(const Fixed &fixed) const;
 
+    // 후위증감연산자는 const로 반환하는게 타당하다. 복사한 값을 리턴하기 때문에
+    // (a++)++같은 연산은 의미가 없다. 따라서 아예 const로 복사된 리턴값을
+    // 변경하지 못하도록 하는 것이 타당하다
     Fixed &operator++();
     Fixed operator++(int);
     Fixed &operator--();
