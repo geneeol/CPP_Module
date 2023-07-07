@@ -79,7 +79,7 @@ int main()
     std::cout << std::endl;
     std::cout << "======= brain test ======" << std::endl;
     {
-        Animal obj1; // impossible
+        // Animal obj1; // impossible
     }
     return 0;
 }

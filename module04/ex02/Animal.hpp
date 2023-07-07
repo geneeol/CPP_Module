@@ -6,10 +6,10 @@ class Animal
 {
   private:
     Animal();
+    
+  protected:
     Animal(std::string type);
     Animal(const Animal &other);
-
-  protected:
     std::string type;
 
   public:

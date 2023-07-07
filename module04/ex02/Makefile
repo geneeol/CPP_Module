@@ -1,6 +1,6 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 $(ASAN)
-NAME = ex01
+NAME = ex02
 
 SRCS = main.cpp \
 		Animal.cpp \
