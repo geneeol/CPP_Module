@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(const ClapTrap &clapTrap)
     : name(clapTrap.name), hitPoints(clapTrap.hitPoints),
       energyPoints(clapTrap.energyPoints), attackDamage(clapTrap.attackDamage)
 {
-    std::cout << "ClapTrap: opy constructor called" << std::endl;
+    std::cout << "ClapTrap: copy constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name, unsigned int hitPoints,
@@ -28,7 +28,8 @@ ClapTrap::ClapTrap(const std::string &name, unsigned int hitPoints,
     : name(name), hitPoints(hitPoints), energyPoints(energyPoints),
       attackDamage(attackDamage)
 {
-    std::cout << "ClapTrap: onsturctor with four arguments called" << std::endl;
+    std::cout << "ClapTrap: consturctor with four arguments called"
+              << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &clapTrap)

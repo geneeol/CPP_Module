@@ -8,7 +8,7 @@ ScavTrap::ScavTrap() : ClapTrap("", 100, 50, 20)
 
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name, 100, 50, 20)
 {
-    std::cout << "ScavTrap: name constructor called" << std::endl;
+    std::cout << "ScavTrap: string constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other)
@@ -21,11 +21,7 @@ ScavTrap::ScavTrap(const ScavTrap &other)
 ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
     ClapTrap::operator=(other);
-    std::cout << "ScavTrap: assignation operator called" << std::endl;
-    // name = other.name;
-    // hitPoints = other.hitPoints;
-    // energyPoints = other.energyPoints;
-    // attackDamage = other.attackDamage;
+    std::cout << "ScavTrap: copy assignment operator called" << std::endl;
     return (*this);
 }
 
