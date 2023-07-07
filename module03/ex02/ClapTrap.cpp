@@ -4,13 +4,13 @@
 ClapTrap::ClapTrap()
     : name(""), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-    std::cout << "No argument constructor called" << std::endl;
+    std::cout << "ClapTrap: no argument constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name)
     : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-    std::cout << "string argument constructor called" << std::endl;
+    std::cout << "ClapTrap: string argument constructor called" << std::endl;
     std::cout << "name: " << name << ", hitPoints: " << hitPoints
               << ", energyPoints: " << energyPoints
               << ", attackDamage: " << attackDamage << std::endl;
@@ -20,12 +20,20 @@ ClapTrap::ClapTrap(const ClapTrap &clapTrap)
     : name(clapTrap.name), hitPoints(clapTrap.hitPoints),
       energyPoints(clapTrap.energyPoints), attackDamage(clapTrap.attackDamage)
 {
-    std::cout << "copy constructor called" << std::endl;
+    std::cout << "ClapTrap: opy constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(const std::string &name, unsigned int hitPoints,
+                   unsigned int energyPoints, unsigned int attackDamage)
+    : name(name), hitPoints(hitPoints), energyPoints(energyPoints),
+      attackDamage(attackDamage)
+{
+    std::cout << "ClapTrap: onsturctor with four arguments called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &clapTrap)
 {
-    std::cout << "copy assignment operator called" << std::endl;
+    std::cout << "ClapTrap: copy assignment operator called" << std::endl;
     name = clapTrap.name;
     hitPoints = clapTrap.hitPoints;
     energyPoints = clapTrap.energyPoints;
@@ -35,7 +43,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &clapTrap)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << name << " destructor called" << std::endl;
+    std::cout << "ClapTrap: " << name << " destructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string &target)
