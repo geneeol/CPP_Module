@@ -1,11 +1,12 @@
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 $(ASAN)
 NAME = ex03
 
 SRCS = main.cpp \
 		ClapTrap.cpp \
 		ScavTrap.cpp \
-		FragTrap.cpp 
+		FragTrap.cpp \
+		DiamondTrap.cpp
 		
 OBJS = $(SRCS:.cpp=.o)
 
