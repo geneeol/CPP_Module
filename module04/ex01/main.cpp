@@ -75,5 +75,31 @@ int main()
             std::cout << std::endl;
         }
     }
+
+    std::cout << std::endl;
+    std::cout << "======= deep copy test ======" << std::endl;
+    {
+        Cat *cat1 = new Cat("cat1");
+        std::cout << std::endl;
+        Cat cat2 = *cat1;
+        std::cout << std::endl;
+        Cat cat3(cat2);
+
+        std::cout << std::endl;
+        delete cat1;
+
+        cat2.addIdea("cat2 it's my own brain");
+        cat3.addIdea("cat3 it's my own brain");
+
+        std::cout << std::endl;
+        std::cout << "cat2 think: ";
+        cat2.think();
+
+        std::cout << std::endl;
+        std::cout << "cat3 think: ";
+        cat3.think();
+
+        std::cout << std::endl;
+    }
     return 0;
 }
