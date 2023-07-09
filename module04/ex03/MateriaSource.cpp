@@ -17,8 +17,10 @@ MateriaSource::MateriaSource(const MateriaSource &other)
     *this = other;
 }
 
-// TODO: 만약 이미 리스트에 있는 materia를 learnMateria에 또 추가하려고 한다면
+// 만약 이미 리스트에 있는 materia를 learnMateria에 또 추가하려고 한다면
 // double delete 문제가 발생할 수 있다.
+// 즉 learn함수를 호출할 때 인자로 이전에 입력했던 객체를 또 넣으면 안된다.
+// 이는 함수 caller의 책임이다.
 MateriaSource::~MateriaSource()
 {
     for (int i = 0; i < 4; i++)

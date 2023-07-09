@@ -147,17 +147,36 @@ void test3()
     delete src;
 }
 
+void test4()
+{
+    AMateria *ice = new Ice();
+    AMateria *cure = new Cure();
+
+    std::cout << "ice type: " << ice->getType() << std::endl;
+    std::cout << "cure type: " << cure->getType() << std::endl;
+
+    std::cout << "After assing cure to ice\n";
+    *ice = *cure;
+    std::cout << "ice type: " << ice->getType() << std::endl;
+    std::cout << "cure type: " << cure->getType() << std::endl;
+    delete ice;
+    delete cure;
+}
+
 // 릭검사 valgrind --leak-check=yes ./ex03
 int main()
 {
-    std::cout << RED << "======= basic test =======\n" << COLOR_RESET;
+    std::cout << RED << "======= Basic test =======\n" << COLOR_RESET;
     test1();
 
-    std::cout << RED << "\n\n======= deep copy test =======\n" << COLOR_RESET;
+    std::cout << RED << "\n\n======= Deep copy test =======\n" << COLOR_RESET;
     test2();
 
-    std::cout << RED << "\n\n======= unequip test =======\n" << COLOR_RESET;
+    std::cout << RED << "\n\n======= Unequip test =======\n" << COLOR_RESET;
     test3();
+
+    std::cout << RED << "\n\n======= Assign test =======\n" << COLOR_RESET;
+    test4();
 
     return 0;
 }
