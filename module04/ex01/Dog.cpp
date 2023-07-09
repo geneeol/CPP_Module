@@ -16,9 +16,12 @@ Dog::Dog(const Dog &other) : Animal(other), brain(new Brain(*other.brain))
     std::cout << "Dog: copy constructor called" << std::endl;
 }
 
+// 그 어떤 상황에서도 객체의 brain 포인터 맴버변수가 널일 수는 없다.
 Dog &Dog::operator=(const Dog &other)
 {
     std::cout << "Dog: assignment operator called" << std::endl;
+    if (this == &other)
+        return (*this);
     Animal::operator=(other);
     delete brain;
     brain = new Brain(*other.brain);
