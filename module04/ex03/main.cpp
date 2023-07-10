@@ -159,8 +159,20 @@ void test4()
     *ice = *cure;
     std::cout << "ice type: " << ice->getType() << std::endl;
     std::cout << "cure type: " << cure->getType() << std::endl;
-    delete ice;
-    delete cure;
+
+    Character me("me");
+    Character bob("bob");
+
+    LF;
+    me.equip(ice);
+    bob.equip(cure);
+
+    me.printEquiped();
+    bob.printEquiped();
+
+    // 동적 바인딩
+    me.use(0, bob);
+    bob.use(0, me);
 }
 
 // 릭검사 valgrind --leak-check=yes ./ex03
