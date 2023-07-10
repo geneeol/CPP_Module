@@ -155,7 +155,8 @@ void test4()
     std::cout << "ice type: " << ice->getType() << std::endl;
     std::cout << "cure type: " << cure->getType() << std::endl;
 
-    std::cout << "After assing cure to ice\n";
+    LF;
+    std::cout << "After assigning cure to ice\n";
     *ice = *cure;
     std::cout << "ice type: " << ice->getType() << std::endl;
     std::cout << "cure type: " << cure->getType() << std::endl;
@@ -164,6 +165,7 @@ void test4()
     Character bob("bob");
 
     LF;
+    std::cout << "me will equip ice, bob will equip cure\n";
     me.equip(ice);
     bob.equip(cure);
 
