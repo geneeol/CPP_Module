@@ -1,12 +1,12 @@
 #include "Cat.hpp"
 #include <iostream>
 
-Cat::Cat() : Animal("defaultCat")
+Cat::Cat() : Animal("Cat")
 {
     std::cout << "Cat: no argumtent constructor called" << std::endl;
 }
 
-Cat::Cat(const std::string &type) : Animal(type)
+Cat::Cat(const std::string &type) : Animal("Cat_" + type)
 {
     std::cout << "Cat: string constructor called" << std::endl;
 }

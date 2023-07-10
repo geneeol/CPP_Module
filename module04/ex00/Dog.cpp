@@ -1,12 +1,12 @@
 #include "Dog.hpp"
 #include <iostream>
 
-Dog::Dog() : Animal("defaultDog")
+Dog::Dog() : Animal("Dog")
 {
     std::cout << "Dog: no argumtent constructor called" << std::endl;
 }
 
-Dog::Dog(const std::string &type) : Animal(type)
+Dog::Dog(const std::string &type) : Animal("Dog_" + type)
 {
     std::cout << "Dog: string constructor called" << std::endl;
 }

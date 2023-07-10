@@ -32,8 +32,3 @@ std::string Animal::getType() const
 {
     return (type);
 }
-
-void Animal::makeSound() const
-{
-    std::cout << "Animal: This sound will be overriden" << std::endl;
-}
