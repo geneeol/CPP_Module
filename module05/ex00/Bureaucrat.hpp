@@ -7,15 +7,16 @@
 class Bureaucrat
 {
   private:
-    const static int MAX_GRADE = 1;
-    const static int MIN_GRADE = 150;
+    Bureaucrat();
+    const static int HIGHEST_GRADE = 1;
+    const static int LOWEST_GRADE = 150;
     const std::string name;
     int grade;
 
   public:
     class GradeTooHighException;
     class GradeTooLowException;
-    Bureaucrat();
+    Bureaucrat(const std::string &name, int grade);
     Bureaucrat(const Bureaucrat &other);
     ~Bureaucrat();
     Bureaucrat &operator=(const Bureaucrat &other);
@@ -26,13 +27,13 @@ class Bureaucrat
     void decrementGrade();
 };
 
-class GradeTooHighException : public std::exception
+class Bureaucrat::GradeTooHighException : public std::exception
 {
   public:
     virtual const char *what() const throw();
 };
 
-class GradeTooLowException : public std::exception
+class Bureaucrat::GradeTooLowException : public std::exception
 {
   public:
     virtual const char *what() const throw();
