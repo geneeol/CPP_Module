@@ -1,9 +1,6 @@
 #include "Form.hpp"
+#include <iostream>
 
-// Add also a beSigned() member function to the Form that takes a Bureaucrat as
-// parameter. It changes the form status to signed if the bureaucrat’s grade is high enough
-// (higher or egal to the required one). Remember, grade 1 is higher than grade 2.
-// If the grade is too low, throw a Form::GradeTooLowException
 
 Form::Form(const std::string &name, int gradeToSign, int gradeToExecute)
     : name(name), isSigned(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
@@ -56,4 +53,12 @@ const char *Form::GradeTooHighException::what() const throw()
 const char *Form::GradeTooLowException::what() const throw()
 {
     return "Grade too low (Form)";
+}
+
+std::ostream &operator<<(std::ostream &out, const Form &Form)
+{
+    std::cout << Form.getName() << " is " << (Form.getIsSigned() ? "" : "not ")
+              << "signed, grade to sign: " << Form.getGradeToSign()
+              << ", grade to execute: " << Form.getGradeToExecute() << std::endl;
+    return out;
 }

@@ -43,4 +43,4 @@ class Form::GradeTooLowException : public std::exception
     virtual const char *what() const throw();
 };
 
-std::ostream &operator<<(std::ostream &out, const Form &bureaucrat);
+std::ostream &operator<<(std::ostream &out, const Form &form);
