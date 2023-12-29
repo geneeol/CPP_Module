@@ -10,7 +10,7 @@ void create_bureaucrat(const std::string &name, int grade)
     }
     catch (std::exception &e)
     {
-        std::cout << "create_bureaucrat: " << e.what() << std::endl;
+        std::cout << "create_bureaucrat, grade is " << grade << ": " << e.what() << std::endl;
     }
 }
 
@@ -25,7 +25,8 @@ void increment_bureaucrat(const std::string &name, int grade)
     }
     catch (std::exception &e)
     {
-        std::cout << "Increment: " << e.what() << std::endl;
+        std::cout << "Increment: " << e.what() << ", ";
+        std::cout << "grade is " << grade << std::endl;
     }
 }
 
@@ -40,7 +41,8 @@ void decrement_bureaucrat(const std::string &name, int grade)
     }
     catch (std::exception &e)
     {
-        std::cout << "Decrement: " << e.what() << std::endl;
+        std::cout << "Decrement: " << e.what() << ", ";
+        std::cout << "grade is " << grade << std::endl;
     }
 }
 
