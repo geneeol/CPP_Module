@@ -20,14 +20,3 @@ static void printData(const T &elem)
 {
     std::cout << elem << " ";
 }
-
-// class Awesome
-// {
-//   public:
-//     Awesome(void);
-//     template <typename T>
-//     void printData(const T elem) const
-//     {
-//         std::cout << elem << std::endl;
-//     }
-// };
