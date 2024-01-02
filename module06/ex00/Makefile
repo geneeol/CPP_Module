@@ -1,6 +1,6 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 $(ASAN)
-NAME = ex00
+NAME = convert
 
 SRCS = $(wildcard *.cpp)
 		
