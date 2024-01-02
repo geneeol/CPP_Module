@@ -1,5 +1,6 @@
 #include "whatever.hpp"
 #include <iostream>
+#include <stdio.h>
 
 int main(void)
 {
@@ -27,6 +28,14 @@ int main(void)
     std::cout << "g = " << g << ", h = " << h << std::endl;
     std::cout << "min( g, h ) = " << ::min(g, h) << std::endl;
     std::cout << "max( g, h ) = " << ::max(g, h) << std::endl;
+
+    // std::string *str1 = new std::string("str1");
+    // std::string *str2 = new std::string("str2");
+
+    // printf("str1 = %p, str2 = %p\n", str1, str2);
+    // swap(str1, str2);
+    // std::cout << "str1 = " << *str1 << ", str2 = " << *str2 << std::endl;
+    // printf("str1 = %p, str2 = %p\n", str1, str2);
 
     return 0;
 }
