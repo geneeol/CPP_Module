@@ -53,12 +53,14 @@ static void convertFloat(double d)
     int precision;
 
     std::cout << "float: ";
-    if (d != d)
-        std::cout << "nanf" << std::endl;
-    else if (d < -std::numeric_limits<float>::max())
-        std::cout << "-inff" << std::endl;
-    else if (d > std::numeric_limits<float>::max())
-        std::cout << "+inff" << std::endl;
+
+    if (d != d || d < -std::numeric_limits<float>::max() || d > std::numeric_limits<float>::max())
+    {
+        if (d > 0)
+            std::cout << "+";
+        std::cout << d << "f" << std::endl;
+        return;
+    }
     else
     {
         precision = getPrecision(d);
@@ -87,6 +89,22 @@ static void convertDouble(double d)
     std::cout << std::defaultfloat;
 }
 
+static bool mayBeImpossible(const std::string &str)
+{
+    return (str[0] == '\0' || str.length() >= 2);
+}
+
+static bool invalidFormat(const std::string &str, const std::string str_end, double d)
+{
+    if (str_end[0] == '\0')
+        return false;
+    if (str.find('.') != std::string::npos)
+        return (!(str_end[0] == 'f' && str_end[1] == '\0'));
+    if (d == std::numeric_limits<double>::infinity() || d == -std::numeric_limits<double>::infinity() || d != d)
+        return (!(str_end[0] == 'f' && str_end[1] == '\0'));
+    return true;
+}
+
 void ScalarConverter::convert(const std::string &str)
 {
     char *str_end;
@@ -97,8 +115,7 @@ void ScalarConverter::convert(const std::string &str)
     // 변환한 d가 nan인데 str_end가 널문자가 아니라면 not impossible
     // 위 세상황이 아니라면 전부 impossible
     // 추가로 빈문자열일 경우 impossible
-    if (str[0] == '\0' || (str.length() >= 2 && (!(str_end[0] == '\0' || (str_end[0] == 'f' && str_end[1] == '\0')) ||
-                                                 (d != d && str_end[0] != '\0'))))
+    if (mayBeImpossible(str) && invalidFormat(str, str_end, d))
     {
         std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
