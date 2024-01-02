@@ -22,8 +22,10 @@ class Array
         arr_size = n;
     }
 
-    Array(const Array &src) { *this = src; }
+    // TODO: 인자 탬플릿처리
+    Array(const Array &other) { *this = other; }
 
+    // TODO: 인자 탬플릿 처리
     Array &operator=(Array const &other)
     {
         if (this != &other)
