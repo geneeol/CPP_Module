@@ -1,5 +1,4 @@
 #include "Array.hpp"
-
 #include <iostream>
 
 int main(void)
@@ -52,7 +51,6 @@ int main(void)
     std::cout << "intArr2: ";
     for (unsigned int i = 0; i < intArr2.size(); i++)
         std::cout << intArr2[i] << " ";
-    // intArr2[0] = 1;
     std::cout << std::endl;
     std::cout << "strArr2: ";
     for (unsigned int i = 0; i < strArr2.size(); i++)

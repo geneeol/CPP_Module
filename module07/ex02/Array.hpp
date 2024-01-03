@@ -22,11 +22,9 @@ class Array
         arr_size = n;
     }
 
-    // TODO: 인자 탬플릿처리
     Array(const Array &other) { *this = other; }
 
-    // TODO: 인자 탬플릿 처리
-    Array &operator=(Array const &other)
+    Array &operator=(const Array &other)
     {
         if (this != &other)
         {
@@ -36,6 +34,7 @@ class Array
                 arr[i] = other.arr[i];
             arr_size = other.arr_size;
         }
+        return (*this);
     }
 
     ~Array(void) { delete[] arr; }
