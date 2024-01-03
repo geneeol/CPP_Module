@@ -1,14 +1,12 @@
 #pragma once
 
 #include "AForm.hpp"
-#include <string>
 
 class RobotomyRequestForm : public AForm
 {
   private:
     RobotomyRequestForm();
     RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
-    std::string target;
 
   public:
     RobotomyRequestForm(const std::string &target);

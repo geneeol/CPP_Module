@@ -1,14 +1,12 @@
 #pragma once
 
 #include "AForm.hpp"
-#include <string>
 
 class PresidentialPardonForm : public AForm
 {
   private:
     PresidentialPardonForm();
     PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
-    std::string target;
 
   public:
     PresidentialPardonForm(const std::string &target);

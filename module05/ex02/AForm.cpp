@@ -1,21 +1,18 @@
 #include "AForm.hpp"
 #include <iostream>
 
-AForm::AForm(const std::string &name, int gradeToSign, int gradeToExecute)
-    : name(name), isSigned(false), gradeToSign(gradeToSign),
-      gradeToExecute(gradeToExecute)
+AForm::AForm(const std::string &name, const std::string &target, int gradeToSign, int gradeToExecute)
+    : name(name), target(target), isSigned(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {
-    if (gradeToSign > AForm::LOWEST_GRADE ||
-        gradeToExecute > AForm::LOWEST_GRADE)
+    if (gradeToSign > AForm::LOWEST_GRADE || gradeToExecute > AForm::LOWEST_GRADE)
         throw GradeTooLowException();
-    if (gradeToSign < AForm::HIGHEST_GRADE ||
-        gradeToExecute < AForm::HIGHEST_GRADE)
+    if (gradeToSign < AForm::HIGHEST_GRADE || gradeToExecute < AForm::HIGHEST_GRADE)
         throw GradeTooHighException();
 }
 
 AForm::AForm(const AForm &other)
-    : name(other.name), isSigned(other.isSigned),
-      gradeToSign(other.gradeToSign), gradeToExecute(other.gradeToExecute)
+    : name(other.name), target(other.target), isSigned(other.isSigned), gradeToSign(other.gradeToSign),
+      gradeToExecute(other.gradeToExecute)
 {
 }
 
@@ -24,6 +21,11 @@ AForm::~AForm() {}
 const std::string &AForm::getName() const
 {
     return name;
+}
+
+const std::string &AForm::getTarget() const
+{
+    return target;
 }
 
 bool AForm::getIsSigned() const
@@ -65,11 +67,9 @@ const char *AForm::FormNotSignedException::what() const throw()
 
 std::ostream &operator<<(std::ostream &out, const AForm &AForm)
 {
-    std::cout << AForm.getName() << " is "
-              << (AForm.getIsSigned() ? "" : "not ")
+    std::cout << AForm.getName() << " is " << (AForm.getIsSigned() ? "" : "not ")
               << "signed, grade to sign: " << AForm.getGradeToSign()
-              << ", grade to execute: " << AForm.getGradeToExecute()
-              << std::endl;
+              << ", grade to execute: " << AForm.getGradeToExecute() << std::endl;
     return out;
 }
 
