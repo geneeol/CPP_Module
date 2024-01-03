@@ -58,7 +58,7 @@ static void convertFloat(double d)
     {
         if (d > 0)
             std::cout << "+";
-        std::cout << d << "f" << std::endl;
+        std::cout << static_cast<float>(d) << "f" << std::endl;
         return;
     }
     else
