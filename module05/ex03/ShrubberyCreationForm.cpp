@@ -3,21 +3,18 @@
 #include <iostream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
-    : AForm("ShrubberyCreationForm", 145, 137), target(target)
+    : AForm("ShrubberyCreationForm", target, 145, 137)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
-    : AForm(other), target(other.target)
-{
-}
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : AForm(other) {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
     checkForm(executor);
-    std::ofstream tree(target + "_shrubbery");
+    std::ofstream tree(getTarget() + "_shrubbery");
 
     if (tree.is_open())
     {
