@@ -9,7 +9,7 @@ int main(void)
 {
     int arr1[] = {1, 2, 3, 4, 5};
     int arr2[] = {10, 20, 30, 40, 50};
-    float arr3[] = {1.1f, 2.2f, 3.3f, 4.4f, 5.5f};
+    const float arr3[] = {1.1f, 2.2f, 3.3f, 4.4f, 5.5f};
 
     for (size_t i = 0; i < 5; i++)
         std::cout << arr1[i] << " ";
