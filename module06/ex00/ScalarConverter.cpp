@@ -68,7 +68,6 @@ static void convertFloat(double d)
         if (precision < std::cout.precision())
             std::cout << std::setprecision(precision);
         std::cout << static_cast<float>(d) << "f" << std::endl;
-        std::cout << std::defaultfloat;
     }
 }
 
@@ -86,7 +85,6 @@ static void convertDouble(double d)
     }
     precision = getPrecision(d);
     std::cout << std::fixed << std::setprecision(precision) << d << std::endl;
-    std::cout << std::defaultfloat;
 }
 
 static bool mayBeImpossible(const std::string &str)
