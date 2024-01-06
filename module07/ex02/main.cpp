@@ -12,7 +12,8 @@ int main(void)
     for (unsigned int i = 0; i < intArr.size(); i++)
         intArr[i] = i;
     for (unsigned int i = 0; i < strArr.size(); i++)
-        strArr[i] = std::to_string(i);
+    // TODO: cpp98함수로 변경
+        strArr[i] = std::to_string(i)
 
     std::cout << "intArr: ";
     for (unsigned int i = 0; i < intArr.size(); i++)
