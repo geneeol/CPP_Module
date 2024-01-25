@@ -10,19 +10,11 @@ class Array
     unsigned int arr_size;
 
   public:
-    Array()
-    {
-        arr = new T[0];
-        arr_size = 0;
-    }
+    Array() : arr(new T[0]), arr_size(0) {}
 
-    Array(unsigned int n)
-    {
-        arr = new T[n];
-        arr_size = n;
-    }
+    Array(unsigned int n) : arr(new T[n]), arr_size(n) {}
 
-    Array(const Array &other) { *this = other; }
+    Array(const Array &other) : arr(new T[0]) { *this = other; }
 
     Array &operator=(const Array &other)
     {
@@ -37,7 +29,7 @@ class Array
         return (*this);
     }
 
-    ~Array(void) { delete[] arr; }
+    ~Array() { delete[] arr; }
 
     T &operator[](unsigned int i)
     {
