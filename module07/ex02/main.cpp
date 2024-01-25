@@ -53,7 +53,6 @@ int main(void)
     catch (const std::exception &e)
     {
         std::cout << "intArr[-1]: " << e.what() << std::endl;
-        std::cerr << e.what() << '\n';
     }
 
     std::cout << "\n\n\n";
