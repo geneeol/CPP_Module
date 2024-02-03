@@ -15,8 +15,8 @@ BitcoinExchange::BitcoinExchange(const std::string &filName)
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &other)
 {
-    inputFile.open(other.fileName);
-    dbFile.open(dbFileName);
+    inputFile.open(other.fileName.c_str());
+    dbFile.open(dbFileName.c_str());
 
     if (!inputFile.is_open() || !dbFile.is_open())
         throw std::exception();
