@@ -6,8 +6,8 @@ const std::string BitcoinExchange::dbFileName = "data.csv";
 
 BitcoinExchange::BitcoinExchange(const std::string &filName)
 {
-    inputFile.open(filName);
-    dbFile.open(dbFileName);
+    inputFile.open(filName.c_str());
+    dbFile.open(dbFileName.c_str());
 
     if (!inputFile.is_open() || !dbFile.is_open())
         throw std::exception();
@@ -150,10 +150,10 @@ t_coinVal BitcoinExchange::parseInputLine(const std::string &line)
     double value;
     char junk;
 
-    if (dateStr.length() != 11 || dateStr.back() != ' ')
+    if (dateStr.length() != 11 || dateStr[dateStr.length() - 1] != ' ')
         throw std::exception();
     dateStr.erase(dateStr.length() - 1);
-    if (valueStr.empty() || valueStr.front() != ' ')
+    if (valueStr.empty() || valueStr[0] != ' ')
         throw std::exception();
 
     if (invalidDate(dateStr) || !(valueStream >> value) || (valueStream >> junk) ||
