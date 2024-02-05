@@ -61,29 +61,31 @@ void PmergeMe::checkSorted()
     }
 }
 
-std::vector<int> PmergeMe::divide(const std::vector<int> &curr, std::vector<int> &main_chain,
-                                  std::vector<int> &sub_chain)
-{
-    std::vector<int>::const_iterator it = curr.begin();
-    size_t halfOfSize = curr.size() / 2;
-}
+// std::vector<int> PmergeMe::divide(const std::vector<int> &curr,
+//                                   std::vector<int> &main_chain,
+//                                   std::vector<int> &sub_chain)
+// {
+//     std::vector<int>::const_iterator it = curr.begin();
+//     size_t halfOfSize = curr.size() / 2;
+// }
 
-// divide에서 main_chain 리턴 -> 계속 divide 타고 들어가게, divide에 대응되는 subchain은 어떻게 build?
-std::vector<int> PmergeMe::mergeInsertion(std::vector<int> vec)
-{
-    if (vec.size() == 1)
-        return vec;
-    if (vec.size() == 2)
-    {
-        if (vec[0] > vec[1])
-            std::swap(vec[0], vec[1]);
-        return vec;
-    }
-
-    std::vector<int> main_chain, sub_chain;
-    divide(vec, main_chain, sub_chain);
-    std::vector<int> sorted = mergeInsertion(main_chain);
-}
+// divide에서 main_chain 리턴 -> 계속 divide 타고 들어가게, divide에 대응되는
+// subchain은 어떻게 build?
+// std::vector<int> PmergeMe::mergeInsertion(std::vector<int> vec)
+// {
+//     if (vec.size() == 1)
+//         return vec;
+//     if (vec.size() == 2)
+//     {
+//         if (vec[0] > vec[1])
+//             std::swap(vec[0], vec[1]);
+//         return vec;
+//     }
+//     std::vector<int> main_chain, sub_chain;
+//     divide(vec, main_chain, sub_chain);
+//     std::vector<int> sorted = sortMainChain(main_chain, sub_chain);
+//     binary_insertion(sorted, sub_chain, prev_sub_chain);
+// }
 
 void PmergeMe::timer(std::vector<int> &vec)
 {

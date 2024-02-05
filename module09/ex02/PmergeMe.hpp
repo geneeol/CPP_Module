@@ -20,7 +20,9 @@ class PmergeMe
     void printContainer(const std::deque<int> &deq);
     void timer(std::vector<int> &vec);
     void timer(std::deque<int> &deq);
-    std::vector<int> divide(const std::vector<int> &curr, std::vector<int> &main_chain, std::vector<int> &sub_chain);
+    // std::vector<int> divide(const std::vector<int> &curr,
+    //                         std::vector<int> &main_chain,
+    //                         std::vector<int> &sub_chain);
     std::vector<int> mergeInsertion(std::vector<int> vec);
     std::vector<int> mergeInsertion(std::deque<int> deq);
     void checkSorted();
