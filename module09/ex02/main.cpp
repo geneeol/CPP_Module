@@ -6,8 +6,11 @@ int main(int argc, const char **argv)
 {
     PmergeMe pmergeMe;
 
-    (void)argc;
-    (void)argv;
+    if (argc < 2)
+    {
+        std::cout << "Usage: " << argv[0] << " [int] [int] ..." << std::endl;
+        return 1;
+    }
     try
     {
         pmergeMe.sortAndPrint(argv + 1);
