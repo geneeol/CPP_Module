@@ -3,8 +3,6 @@
 
 int main(int argc, char **argv)
 {
-    BitcoinExchange *exchanger;
-
     if (argc != 2)
     {
         std::cout << "Usage: ./ex00 input.txt" << std::endl;
@@ -13,15 +11,14 @@ int main(int argc, char **argv)
 
     try
     {
-        exchanger = new BitcoinExchange(argv[1]);
+        BitcoinExchange exchanger(argv[1]);
+        exchanger.fillDbMap();
+        exchanger.calcAndPrint();
     }
     catch (std::exception &e)
     {
         std::cout << "Failed to open file" << std::endl;
         return 1;
     }
-    exchanger->fillDbMap();
-    exchanger->calcAndPrint();
-    delete exchanger;
     return 0;
 }
